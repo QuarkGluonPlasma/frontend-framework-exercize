@@ -1,0 +1,25 @@
+{
+  "name": "frontend-framework-exercize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuarkGluonPlasma/frontend-framework-exercize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuarkGluonPlasma/frontend-framework-exercize/issues"
+  },
+  "homepage": "https://github.com/QuarkGluonPlasma/frontend-framework-exercize#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.10",
+    "@babel/preset-react": "^7.16.7"
+  }
+}
