@@ -5,8 +5,8 @@
   "main": ".babelrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel --config-file ./.babelrc.js dong.js -d ./dist",
-    "dev": "babel --config-file ./.babelrc.js dong.js -d ./dist --watch"
+    "build": "babel dong.js index.js -d ./dist",
+    "dev": "babel  dong.js index.js -d ./dist --watch"
   },
   "keywords": [],
   "author": "",

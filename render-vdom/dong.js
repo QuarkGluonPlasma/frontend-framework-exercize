@@ -25,58 +25,25 @@ const render = (vdom, parent = null) => {
     }
 };
 
+function isEventListenerAttr(key, value) {
+    return typeof value == 'function' && key.startsWith('on');
+}
+
+function isStyleAttr(key, value) {
+    return key == 'style' && typeof value == 'object';
+}
+
+function isPlainAttr(key, value) {
+    return typeof value != 'object' && typeof value != 'function';
+}
+
 const setAttribute = (dom, key, value) => {
-    if (typeof value == 'function' && key.startsWith('on')) {
+    if (isEventListenerAttr(key, value)) {
         const eventType = key.slice(2).toLowerCase();
         dom.addEventListener(eventType, value);
-    } else if (key == 'style' && typeof value == 'object') {
+    } else if (isStyleAttr(key, value)) {
         Object.assign(dom.style, value);
-    } else if (typeof value != 'object' && typeof value != 'function') {
+    } else if (isPlainAttr(key, value)) {
         dom.setAttribute(key, value);
     }
 }
-
-const vdom = {
-    type: 'ul',
-    props: {
-        className: 'list'
-    },
-    children: [
-        {
-            type: 'li',
-            props: {
-                className: 'item',
-                style: {
-                    background: 'blue',
-                    color: '#fff'
-                },
-                onClick: function() {
-                    alert(1);
-                }
-            },
-            children: [
-                'aaaa'
-            ]
-        },
-        {
-            type: 'li',
-            props: {
-                className: 'item'
-            },
-            children: [
-                'bbbbddd'
-            ]
-        },
-        {
-            type: 'li',
-            props: {
-                className: 'item'
-            },
-            children: [
-                'cccc'
-            ]
-        }
-    ]
-};
-
-render(vdom, document.getElementById('root'));
