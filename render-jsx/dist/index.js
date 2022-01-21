@@ -13,7 +13,7 @@ const jsx = createElement("ul", {
   onClick: () => alert(2)
 }, "aaa"), createElement("li", {
   className: "item"
-}, data.item1), createElement("li", {
+}, data.item1, createElement("i", null, "aaa")), createElement("li", {
   className: "item"
 }, data.item2));
 render(jsx, document.getElementById('root'));
