@@ -5,6 +5,7 @@
 
 [jsx 的编译，然后渲染](./render-vdom)
 
+[组件渲染](./render-component)
 
 ## run
 ```
