@@ -13,7 +13,7 @@ const render = (vdom, parent = null) => {
         return mount(document.createTextNode(vdom));
     } else if (isElementVdom(vdom)) {
         const dom = mount(document.createElement(vdom.type));
-        for (const child of [].concat(...vdom.children)) {
+        for (const child of [].concat(...vdom.children)) {// children 元素也是 数组，要拍平
             render(child, dom);
         }
         for (const prop in vdom.props) {

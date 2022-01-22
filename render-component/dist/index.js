@@ -1,8 +1,3 @@
-const data = {
-  item1: 'bbb',
-  item2: 'ddd'
-};
-
 function Item(props) {
   return createElement("li", {
     className: "item",
@@ -12,7 +7,7 @@ function Item(props) {
 }
 
 class List extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       list: [{
@@ -24,7 +19,8 @@ class List extends Component {
       }, {
         text: 'ccc',
         color: 'red'
-      }]
+      }],
+      textColor: props.textColor
     };
   }
 
@@ -34,7 +30,8 @@ class List extends Component {
     }, this.state.list.map((item, index) => {
       return createElement(Item, {
         style: {
-          background: item.color
+          background: item.color,
+          color: this.state.textColor
         },
         onClick: () => alert(item.text)
       }, item.text);
@@ -43,4 +40,6 @@ class List extends Component {
 
 }
 
-render(createElement(List, null), document.getElementById('root'));
+render(createElement(List, {
+  textColor: 'pink'
+}), document.getElementById('root'));

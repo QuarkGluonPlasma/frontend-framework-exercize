@@ -8,7 +8,7 @@ function isElementVdom(vdom) {
 }
 
 function isComponentVdom(vdom) {
-    return typeof vdom == 'object' && typeof vdom.type == 'function';
+    return typeof vdom.type == 'function';
 }
 
 const render = (vdom, parent = null) => {
