@@ -13,7 +13,7 @@ const render = (vdom, parent = null) => {
         return mount(document.createTextNode(vdom));
     } else if (isElementVdom(vdom)) {
         const dom = mount(document.createElement(vdom.type));
-        for (const child of vdom.children) {
+        for (const child of [].concat(...vdom.children)) {
             render(child, dom);
         }
         for (const prop in vdom.props) {
