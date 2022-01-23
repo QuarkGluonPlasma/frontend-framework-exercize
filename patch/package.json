@@ -1,5 +1,5 @@
 {
-  "name": "render-component",
+  "name": "patch",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,7 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.16.8",
-    "@babel/core": "^7.16.10",
+    "@babel/core": "^7.16.12",
     "@babel/preset-react": "^7.16.7"
   }
 }
