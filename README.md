@@ -7,6 +7,7 @@
 
 [组件渲染](./render-component)
 
+[fiber 版 react](./render-jsx)
 ## run
 ```
 npx  http-server .
